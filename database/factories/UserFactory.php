@@ -4,12 +4,17 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use User;
+use Baby;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class UserFactory extends Factory
 {
+
+    protected $model = User::class;
+
     /**
      * Define the model's default state.
      *
@@ -37,6 +42,13 @@ class UserFactory extends Factory
             return [
                 'email_verified_at' => null,
             ];
+        });
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (User $user) {
+            $baby = Baby::factory()->create(['user_id' => $user->id, 'family_id' => $user->family->id]);
         });
     }
 }

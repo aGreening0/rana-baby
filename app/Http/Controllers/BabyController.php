@@ -51,6 +51,7 @@ class BabyController extends Controller
 
         $baby = new Baby;
         $baby->user_id = Auth::user()->id;
+        $baby->family_id = Auth::user()->family()->first()->id;
         $baby->name = $request->name;
         $baby->dob = Carbon::parse($request->dob);
         $baby->milk = $request->milk;

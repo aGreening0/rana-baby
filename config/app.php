@@ -212,6 +212,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'User' => App\Models\User::class,
         'Baby' => App\Models\Baby::class,
+        'Family' => App\Models\Family::class,
         ])->toArray(),
 
 ];

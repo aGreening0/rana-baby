@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Family;
 
 class RegisteredUserController extends Controller
 {
@@ -48,6 +49,10 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+
+        $family = Family::create([
+            'user_id' => $user->id
+        ]);
 
         return redirect(route('babies.create'));
     }
