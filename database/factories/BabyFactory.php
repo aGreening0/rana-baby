@@ -20,7 +20,7 @@ class BabyFactory extends Factory
     {
         return [
             'name' => fake()->firstName(),
-            'dob' => Carbon::now()->subWeeks(fake()->numberBetween(1,3)),
+            'dob' => Carbon::now()->subWeeks(fake()->numberBetween(1,12)),
             'milk' => fake()->numberBetween(1,3),
         ];
     }
