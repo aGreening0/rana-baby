@@ -213,6 +213,7 @@ return [
         'User' => App\Models\User::class,
         'Baby' => App\Models\Baby::class,
         'Family' => App\Models\Family::class,
+        'Invite' => App\Models\Invite::class,
         ])->toArray(),
 
 ];

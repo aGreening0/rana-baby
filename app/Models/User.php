@@ -53,6 +53,11 @@ class User extends Authenticatable
         return $this->hasOne(Family::class);
     }
 
+    public function invites()
+    {
+        return $this->hasMany(Invite::class);
+    }
+
 
 
 }
