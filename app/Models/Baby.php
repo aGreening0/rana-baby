@@ -20,6 +20,11 @@ class Baby extends Model
         return $this->belongsTo(Family::class);
     }
 
+    public function milks()
+    {
+        return $this->hasMany(Milk::class);
+    }
+
     public function getAge()
     {
         $age = Carbon::parse($this->dob)->diffInWeeks(Carbon::now());
