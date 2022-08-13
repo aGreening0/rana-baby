@@ -53,6 +53,9 @@ class User extends Authenticatable
         return $this->hasOne(Family::class);
     }
 
-
+    public function milks()
+    {
+        return $this->hasMany(Milk::class);
+    }
 
 }
