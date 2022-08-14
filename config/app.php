@@ -214,6 +214,7 @@ return [
         'Baby' => App\Models\Baby::class,
         'Family' => App\Models\Family::class,
         'Milk' => App\Models\Milk::class,
+        'Diaper' => App\Models\Diaper::class,
         ])->toArray(),
 
 ];

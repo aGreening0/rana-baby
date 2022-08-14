@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BabyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MilkController;
+use App\Http\Controllers\DiaperController;
 
 
 /*
@@ -25,6 +26,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 Route::resource('babies', BabyController::class)->middleware('auth');
 Route::resource('milks', MilkController::class)->middleware('auth');
+Route::resource('diapers', DiaperController::class)->middleware('auth');
 
 
 require __DIR__.'/auth.php';

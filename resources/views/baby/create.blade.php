@@ -1,9 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
 
-    </x-slot>
 
-    <div class="">
+    <div class="min-h-screen">
 
         <div class="max-w-lg sm:px-6 lg:px-8 m-8">
 

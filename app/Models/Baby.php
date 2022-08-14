@@ -44,4 +44,9 @@ class Baby extends Model
 
         return $milkType;
     }
+
+    public function diapers()
+    {
+        return $this->hasMany(Diaper::class);
+    }
 }
