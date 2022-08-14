@@ -135,16 +135,15 @@
         </div>
 
         <div class="col-span-3 m-8">
-            <ul class="steps steps-vertical">
-                <li data-content="" class="step step-primary text-base-100">Yasmin was fed 60 mL of Milk at 3:36 pm by Dre</li>
-                <li data-content=""class="step step-primary text-base-100">Yasmin was fed 90 mL of Milk at 1:20 pm by Dre</li>
-                <li data-content=""class="step step-primary text-base-100">Yasmin had a Diaper Change at 12:12 pm by Alan</li>
-                <li data-content=""class="step step-primary text-base-100">Yasmin was fed 60 mL of Milk at 10:36 am by Dre</li>
-                <li data-content="" class="step step-primary text-base-100">Yasmin was fed 60 mL of Milk at 3:36 pm by Dre</li>
-                <li data-content=""class="step step-primary text-base-100">Yasmin was fed 90 mL of Milk at 1:20 pm by Dre</li>
-                <li data-content=""class="step step-primary text-base-100">Yasmin had a Diaper Change at 12:12 pm by Alan</li>
-                <li data-content=""class="step step-primary text-base-100">Yasmin was fed 60 mL of Milk at 10:36 am by Dre</li>
-              </ul>
+            @if($timelineEvents)
+                <ul class="steps steps-vertical">
+                    @foreach($timelineEvents as $event)
+
+                            <li data-content="" class="step step-primary text-base-100">{{ $event['text'] }}</li>
+
+                    @endforeach
+                </ul>
+            @endif
         </div>
     </div>
 

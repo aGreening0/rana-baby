@@ -43,7 +43,6 @@ class DiaperController extends Controller
             'baby_id' => 'required|integer'
         ]);
 
-
         $user = Auth::user();
         $baby = $user->babies->find($request->baby_id);
         if (!$baby) return;
@@ -54,7 +53,6 @@ class DiaperController extends Controller
         $diaper->type = $request->type;
         $diaper->notes = $request->notes;
         $diaper->save();
-
 
         return redirect(route('dashboard'));
     }
