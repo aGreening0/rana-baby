@@ -22,6 +22,8 @@
                                 <div class="stat-title">Total Milk</div>
                                 @if ($baby->milks)
                                     <div class="stat-value">{{ $baby->milks->sum('amount') }}</div>
+                                @else
+                                    <div class="stat-value">0</div>
                                 @endif
                                 <div class="stat-desc">Last Feeding 1 Hour Ago</div>
                             </div>
@@ -29,9 +31,9 @@
                             <div class="stat">
                                 <div class="stat-title">Total Diapers</div>
                                 @if ($baby->diapers)
-                                <div class="stat-value">{{ $baby->diapers->count() }}</div>
+                                    <div class="stat-value">{{ $baby->diapers->count() }}</div>
                                 @else
-                                <div class="stat-value">0</div>
+                                    <div class="stat-value">0</div>
                                 @endif
                                 <div class="stat-desc">Last Changed 1 Hour Ago</div>
                             </div>
