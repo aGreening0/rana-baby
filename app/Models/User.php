@@ -58,4 +58,9 @@ class User extends Authenticatable
         return $this->hasMany(Milk::class);
     }
 
+    public function diapers()
+    {
+        return $this->hasMany(Diaper::class);
+    }
+
 }

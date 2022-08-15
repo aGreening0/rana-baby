@@ -13,4 +13,9 @@ class Diaper extends Model
     {
         return $this->belongsTo(Baby::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
