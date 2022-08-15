@@ -57,7 +57,7 @@ class BabyController extends Controller
         $baby->milk = $request->milk;
         $baby->save();
 
-        return redirect(route('babies.show', $baby));
+        return redirect(route('dashboard'));
 
     }
 
