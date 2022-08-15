@@ -38,7 +38,7 @@ class TimelineRepository
                 $timelineEvent = [
                     'type' => 'diaper',
                     'time' => $diaper->created_at,
-                    'text' => $diaper->baby->name . ' had a diaper change at ' . $time . ' by ' . $milk->user->name,
+                    'text' => $diaper->baby->name . ' had a diaper change at ' . $time . ' by ' . $diaper->user->name,
                 ];
 
                 $timelineEvents->push($timelineEvent);
