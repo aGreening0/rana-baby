@@ -48,7 +48,9 @@
                         <div class="mockup-phone border-primary-focus">
                             <div class="camera"></div>
                             <div class="display">
-                              <div class="artboard artboard-demo phone-1 bg-info">Hi.</div>
+                              <div class="artboard artboard-demo phone-1 bg-black">
+                                  <img src="/images/screen.png" alt="">
+                              </div>
                             </div>
                           </div>
 

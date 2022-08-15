@@ -14,10 +14,7 @@ class DashboardController extends Controller
         $user = Auth::user();
         $family = $user->family;
         $repo = new TimelineRepository;
-        $timelineEvents = $repo->generateBabyTimeline($family->babies->first())->all();
-        // each baby with milks, diapers, sleep where timestamp is less than 24 hours
-        // last milk, diaper, sleep
-        // timeline with all entries for last 24 hours
+        $timelineEvents = $repo->generateFamilyTimeline($family)->all();
 
         return view('dashboard')
         ->with('family', $family)

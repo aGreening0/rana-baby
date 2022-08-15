@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 use Baby;
+use Family;
 use Carbon\Carbon;
 
 class TimelineRepository
@@ -45,9 +46,37 @@ class TimelineRepository
         }
 
 
-        $timelineEventsSorted = $timelineEvents->sortByDesc('time');
+        $timelineEventsSorted = $timelineEvents->sortByDesc('time')->all();
 
         return $timelineEventsSorted;
 
     }
+
+
+    public function generateFamilyTimeline($family)
+    {
+        $babies = $family->babies;
+
+        $timelineEvents = collect();
+
+        if(!$babies) return;
+
+        foreach($babies as $baby)
+        {
+            $babyEvents = $this->generateBabyTimeline($baby);
+            foreach($babyEvents as $event)
+            {
+                $timelineEvents->push($event);
+            }
+
+
+        }
+
+        $timelineEventsSorted = $timelineEvents->sortByDesc('time');
+
+
+        return $timelineEventsSorted;
+    }
+
 }
+

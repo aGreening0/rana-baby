@@ -25,6 +25,11 @@ class Baby extends Model
         return $this->hasMany(Milk::class);
     }
 
+    public function diapers()
+    {
+        return $this->hasMany(Diaper::class);
+    }
+
     public function getAge()
     {
         $age = Carbon::parse($this->dob)->diffInWeeks(Carbon::now());
@@ -45,8 +50,31 @@ class Baby extends Model
         return $milkType;
     }
 
-    public function diapers()
+    public function todaysMilk()
     {
-        return $this->hasMany(Diaper::class);
+        $todaysMilk = $this->milks()->whereDate('created_at', now())->get();
+
+        return $todaysMilk;
+    }
+
+    public function todaysDiapers()
+    {
+        $todaysDiapers = $this->diapers()->whereDate('created_at', now())->get();
+
+        return $todaysDiapers;
+    }
+
+    public function lastMilk()
+    {
+        $lastMilk = $this->milks->last()->created_at->diffForHumans();
+
+        return $lastMilk;
+    }
+
+    public function lastDiaper()
+    {
+        $lastDiaper = $this->diapers->last()->created_at->diffForHumans();
+
+        return $lastDiaper;
     }
 }
